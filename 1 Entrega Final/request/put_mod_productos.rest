@@ -1,8 +1,0 @@
-PUT http://localhost:2020/api/productos/8
-Content-Type: application/json
-
-{
-    "product": "hola",
-    "price": 121321321,
-    "id": 8
-}

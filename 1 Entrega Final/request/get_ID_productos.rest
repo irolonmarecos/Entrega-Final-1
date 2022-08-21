@@ -1,1 +1,0 @@
-GET  http://localhost:2020/api/productos/6
