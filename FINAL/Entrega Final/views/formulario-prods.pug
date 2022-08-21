@@ -1,0 +1,24 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Document
+        link(rel="stylesheet", href="./style.css")
+    body 
+        div(class='form-register')
+            form(action="/api/productos/", method="post" class='form') 
+                h1 Formulario Registro de Productos
+                input(class="controls f1" type="text" name="nombre" id="nombre" placeholder="Ingrese el nombre del producto")
+                input(class="controls f1" type="text" name="descripcion" id="desc" placeholder="Ingrese una descripcion del producto")
+                input(class="controls f1" type="number" name="precio" id="precio" placeholder="Ingrese el precio")
+                input(class="controls f1" type="number" name="stock" id="stock" placeholder="Ingrese el Stock")
+                input(class="controls f1" type="text" name="url" id="Img" placeholder="Ingrese la URL de la imagen")
+                input(input class="botons" type="submit" value="Registrar" onclick="AgregarProducto ()")
+            div(class="div-prod")
+                    a(href="/" class="princ botons atras") VOLVER
+
+
+    script
+      include ../public/js/main.js

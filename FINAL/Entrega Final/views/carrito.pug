@@ -1,0 +1,35 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title Document
+    link(rel="stylesheet", href="./style.css")
+  body 
+    if prods.length 
+                div(class="div-prod")
+                    h1() LISTADO DE PRODUCTOS
+                    table(class="content-table")
+                        thead 
+                            tr
+                                th ID
+                                th Nombre
+                                th Descripcion
+                                th Price
+                                th Foto
+                        tbody
+                            ul
+                                each items in prods
+                                    tr 
+                                        th= items.id
+                                        th= items.Nombre
+                                        th= items.Descripcion
+                                        th= items.Price
+                                        th 
+                                            img(width="40" src=items.Img, alt="Imagen Compra")
+                    a(href="/api/productos/" class="botons atras") Volver atras
+    else     
+        div(class="div-prod")
+            h1 NO HAY PRODUCTOS EN STOCK
+            a(href="/api/productos/" class="botons atras") Volver atras

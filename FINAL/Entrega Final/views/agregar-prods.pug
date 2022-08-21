@@ -1,0 +1,47 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Document
+        link(rel="stylesheet", href="./style.css")
+
+    body 
+        if carritoCompras.length
+            div(class='form-register')
+                form(action="/api/carrito/catalogo", method="post" class='form') 
+                    h1 Ingrese el ID del producto que desea agregar
+                    input(class="controls f1" type="number" name="id" id="id" placeholder="Ingrese el ID del producto")
+                    input(input class="botons" type="submit" value="AGREGAR CARRITO" )
+                div(class="div-prod")  
+                    a(href="/api/carrito/" class="botons atras") FINALIZAR COMPRA
+
+            div(class="div-prod")
+                h1 LISTADO DE PEDIDOS
+                table(class="content-table")
+                    thead 
+                        tr
+                            th ID
+                            th FECHA
+                            th REALIZADA
+                    tbody
+                        ul
+                            each items in carritoCompras
+                                tr 
+                                    th= items.id
+                                    th= items.Date
+                                    th 
+                                        img(width="40" src='https://cdn1.iconfinder.com/data/icons/payment-15/48/7-Computer-Banking-128.png', alt="Imagen Compra")
+                a(href="/api/carrito" class="botons atras") Volver atras
+
+            
+        else
+            div(class="div-prod")
+                h1 NO TIENE CARRITO DE COMPAS INICIADO  
+                a(href="/api/carrito" class="botons atras") Volver atras
+
+        
+
+    script
+      include ../public/js/main.js            
